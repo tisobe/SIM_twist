@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+ 
+<style  type='text/css'>
+table{text-align:center;margin-left:auto;margin-right:auto;border-style:solid;border-spacing:8px;border-width:2px;border-collapse:separate}
+td{text-align:center;padding:8px}
+span.nobr {white-space:nowrap;}
+</style>
+<title>SIM Shift and Twist Trends </title> 
+ 
+<script> 
+        function MyWindowOpener(imgname) { 
+                msgWindow=open("","displayname","toolbar=no,directories=no,menubar=no,location=no,scrollbars=no,status=no,width=900,height=700,resize=yes"); 
+                msgWindow.document.close(); 
+                msgWindow.document.write("<html><head><title>CTI plot:   "+imgname+"</title></head>"); 
+                msgWindow.document.write("<body sytle='background-color:white'>"); 
+                msgWindow.document.write("<img src='/mta_days/mta_cti/"+imgname+"' style='width:700px;height:700px'></body></html>"); 
+                msgWindow.focus(); 
+        } 
+</script> 
+</head> 
+<body style='color:#000000;background-color:#FFEBCD'>
+
+<h2>SIM Shift and Twist Trends</h2>
+<p style='margin-left:50px; margin-right:50px;'>
+This page shows trends of SIM shifts (dy and dz) and twist (dtheta). All quantities are directly taken from
+pcaf*_asol1.fits files. The units are <b>mm</b> for dy and dz, and <b>second</b>  for dtheta.  
+The sudden shifts in the plots  were due to fid light drift (see a memo by Aldocroft
+<a href="http://cxc.harvard.edu/mta/ASPECT/fid_drift/"> fiducial light drfit</a>).
+</p>
+
+<p style='text-align:center;padding-bottom:30px'> 
+<img src='./Plots/twist_plot.png' alt='twist plot' width=90%>
+</p>
+
+<p style='margin-left:50px; margin-right:50px;'>
+The following plot shows the dthera trends classified by the instruments
+(ACIS-I, ACIS-S, HRC-I, and HRC-S). 
+</p> 
+
+<p style='text-align:center;padding-bottom:30px'> 
+<img src='./Plots/dtheta_plot.png' alt='thera plot'  width=90%>
+</p> 
+
+
+
+<h3> SIM X, Y, Z, and  Pitch and Yaw Amps of Dithers</h3> 
+
+<p style='text-align:center;padding-bottom:30px'> 
+<img src='./Plots/sim_plot.png' alt='sim plot' width=90%>
+</p>
+
+
+
+
+<hr /> 
+
+<p style='padding-bottom:5px'><em> 
+If you have any questions about this page, please contact <a href='mailto:swolk@head.cfa.harvard.edu'>swolk@head.cfa.harvard.edu</a>. 
+</em></p> 
+<p>
+Last Modified: Apr 19, 2017
+</p> 
+</body>
+</html>

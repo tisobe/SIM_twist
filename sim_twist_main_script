@@ -1,0 +1,11 @@
+source /proj/sot/ska/bin/ska_envs.csh
+
+cd data/mta/Script/ALIGNMENT/Sim_twist/Exec/
+
+/data/mta/Script/ALIGNMENT/Sim_twist/Scripts/alignment_sim_twist_extract.py
+/data/mta/Script/ALIGNMENT/Sim_twist/Scripts/fid_light_data_extract.py
+
+/data/mta/Script/ALIGNMENT/Sim_twist/Scripts/fid_light_trend_plot.py
+/data/mta/Script/ALIGNMENT/Sim_twist/Scripts/sim_twist_trend_plot.py
+
+chgrp mtagroup /data/mta/Script/ALIGNMENT/Sim_twist/Data/*
