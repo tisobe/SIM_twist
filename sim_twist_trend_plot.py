@@ -6,7 +6,7 @@
 #                                                                                       #
 #               author: t. isobe (tisobe@cfa.harvard.edu)                               #
 #                                                                                       #
-#               last update: Apr 19, 2017                                               #
+#               last update: Jun 05, 2017                                               #
 #                                                                                       #
 #########################################################################################
 
@@ -103,9 +103,9 @@ def sim_twist_trend_plot(inyear):
         cmon  = int(float(out.tm_mon))
         eyear = cyear + 1
         if cmon < 3:
-            pyear = year - 1
+            pyear = cyear - 1
         else:
-            pyear = year
+            pyear = cyear
         lchk  = 1
 
     full_data_info = []

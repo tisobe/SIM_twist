@@ -1,6 +1,9 @@
-source /proj/sot/ska/bin/ska_envs.csh
+cd /data/mta/Script/ALIGNMENT/Sim_twist/Exec/
 
-cd data/mta/Script/ALIGNMENT/Sim_twist/Exec/
+rm -rf param
+mkdir param
+
+source /proj/sot/ska/bin/ska_envs.csh
 
 /data/mta/Script/ALIGNMENT/Sim_twist/Scripts/alignment_sim_twist_extract.py
 /data/mta/Script/ALIGNMENT/Sim_twist/Scripts/fid_light_data_extract.py

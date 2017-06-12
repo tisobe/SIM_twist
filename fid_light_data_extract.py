@@ -6,7 +6,7 @@
 #                                                                                       #
 #               author: t. isobe (tisobe@cfa.harvard.edu)                               #
 #                                                                                       #
-#               last update: Apr 19, 2017                                               #
+#               last update: Jun 12, 2017                                               #
 #                                                                                       #
 #########################################################################################
 
@@ -94,12 +94,11 @@ def fid_light_data_extract(tstart='', tstop='', year=''):
         if pmon < 1:
             pmon   = 12
             pyear -= 1
-            lydate = find_ydate(pyear, pmon, 1, string=1)
-            tstart = str(pyear) + ':' + lydate + ':00:00:00'
+        lydate = find_ydate(pyear, pmon, 1, string=1)
+        tstart = str(pyear) + ':' + lydate + ':00:00:00'
 
-            lydate = find_ydate(year, mon, 1, string=1)
-            tstop  = str(year)  + ':' + lydate + ':00:00:00'
-
+        lydate = find_ydate(year, mon, 1, string=1)
+        tstop  = str(year)  + ':' + lydate + ':00:00:00'
 #
 #--- get fid light information
 #
@@ -130,11 +129,15 @@ def get_acen_data(tstart, tstop, file_id, fid_detect):
 #--- compare the list with a file id, and if it is found, procceed farther
 #
     for fname in file_id:
+        chk = 0
         for comp in acent_list:
             mc = re.search(fname, comp)
             if mc is not None:
                 filename = comp
+                chk = 1
                 break
+        if chk == 0:
+            continue
 #
 #--- extract an acen fits file
 #
@@ -157,6 +160,9 @@ def get_acen_data(tstart, tstop, file_id, fid_detect):
             ang_y   = out['ang_y']
             ang_z   = out['ang_z']
             alg     = out['alg']
+
+            if len(time) == 0:
+                continue
      
             ofile  = data_dir + fid_detect[fname][1][m]
             if os.path.isfile(ofile):
@@ -166,7 +172,10 @@ def get_acen_data(tstart, tstop, file_id, fid_detect):
 #
 #---- take 5 min average for the data
 #
-            begin  = time[0]
+            try:
+                begin  = time[0]
+            except:
+                continue
             end    = begin + 300.0
             m      = 0
             k_list = []
@@ -303,7 +312,7 @@ def find_ydate(year, mon, day, string=0):
     """
 
     ydate = mon_list[mon-1] + day 
-    if (tmcv.isLeapYear(year) == 1) and mon > 2:
+    if (tcnv.isLeapYear(year) == 1) and mon > 2:
         ydate += 1
 
     if string == 1:
